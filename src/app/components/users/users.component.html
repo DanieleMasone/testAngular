@@ -1,0 +1,41 @@
+<h2>{{title}}</h2>
+<table class="table table-stripped table-sm table-dark">
+  <tr>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Codice fiscale</th>
+    <th>Email</th>
+    <th>Telefono</th>
+    <th>Provincia</th>
+    <th>Età</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.name}}</td>
+    <td>{{user.lastname}}</td>
+    <td>{{user.fiscalcode}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.province}}</td>
+    <td>{{user.age}}</td>
+    <td>
+      <div class="row">
+        <div class="col-sm-4">
+          <button class="btn btn-primary btn-sm" (click)="showUserDetail()">
+            <fa name="info"></fa>
+          </button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-primary btn-sm" (click)="updateUser()">
+            <fa name="pencil"></fa>
+          </button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-danger btn-sm" (click)="deleteUser()">
+            <fa name="trash-o"></fa>
+          </button>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
