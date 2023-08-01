@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ import { UserService } from './services/user-service/user.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RoutingModuleModule,
     BrowserAnimationsModule,
     MatDialogModule

@@ -9,20 +9,20 @@ import { UsersComponent } from '../components/users/users.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'users',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'users',
-    component: UsersComponent
-  },
+    path: 'signup',
+    component: SignupComponent
+  } ,
   {
     path: 'login',
     component: LoginComponent
   },
   {
-    path: 'signup',
-    component: SignupComponent
+    path: 'users',
+    component: UsersComponent
   }
 ];
 
