@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   title = 'Users';
   users: Array<User> = [];
 
-  constructor(private userService: UserService, private route: Router) { }
+  constructor(private userService: UserService, protected route: Router) { }
 
   ngOnInit(): void { }
 

@@ -15,7 +15,7 @@ export class AuthService {
 
   private isUserLogged = !!localStorage.getItem('token');
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient) { }
 
   isUserLoggedIn() {
     return this.isUserLogged;

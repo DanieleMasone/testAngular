@@ -14,7 +14,7 @@ import { AuthService } from '../../services/auth-service/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(protected auth: AuthService, protected router: Router) { }
 
   ngOnInit(): void { }
 

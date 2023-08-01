@@ -36,7 +36,7 @@ export class UserService {
       age: 30
     }];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient) { }
 
   getUsers() {
     return this.users;
