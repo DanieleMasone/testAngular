@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { API_CONFIG, ApiConfig } from '../../models/environment.api';
 import { User } from '../../models/user';
 
 
@@ -36,7 +37,10 @@ export class UserService {
       age: 30
     }];
 
-  constructor(protected httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient,
+    @Inject(API_CONFIG) private api: ApiConfig) {
+    this.path = this.api.host + this.api.path;
+  }
 
   getUsers() {
     return this.users;

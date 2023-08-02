@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { API_CONFIG, ApiConfig } from '../../models/environment.api';
 
 
 /**
@@ -15,7 +16,10 @@ export class AuthService {
 
   private isUserLogged = !!localStorage.getItem('token');
 
-  constructor(protected httpClient: HttpClient) { }
+  constructor(protected httpClient: HttpClient,
+    @Inject(API_CONFIG) private api: ApiConfig) {
+    this.path = this.api.host + this.api.path;
+  }
 
   isUserLoggedIn() {
     return this.isUserLogged;
